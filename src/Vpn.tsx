@@ -1,4 +1,3 @@
-
 export const openDeviceVPNSettings = () => {
     const ua = navigator.userAgent;
   
@@ -25,4 +24,3 @@ export const openDeviceVPNSettings = () => {
       alert('Налаштування не можуть бути відкриті на цьому пристрої.');
     }
   };
-  
