@@ -17,8 +17,9 @@ export const openDeviceVPNSettings = () => {
     } else if (/Macintosh|MacIntel|MacPPC|Mac68K/.test(ua)) {
       // Відкрити налаштування мережі на macOS, найближче до VPN
       window.location.href = 'x-apple.systempreferences:com.apple.preference.network';
-    } else if (/Linux|armv81/i.test(ua)) {
+    } else if (/Linux/i.test(ua)) {
       // Для Linux, надати інструкції
+      window.location.href = 'intent:#Intent;action=android.settings.VPN_SETTINGS;end';
       alert('Будь ласка, відкрийте налаштування VPN вручну у вашій системі.');
     } else {
       alert('Налаштування не можуть бути відкриті на цьому пристрої.');
