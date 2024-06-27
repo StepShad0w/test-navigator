@@ -1,10 +1,10 @@
 export const openDeviceVPNSettings = () => {
     const ua = navigator.userAgent;
-    const isAndroid = /android/i.test(ua);
 
-    if (isAndroid) {
+    if (/android/i.test(ua)) {
         if (/Linux armv81/i.test(ua)) {
             alert('Будь ласка, відкрийте налаштування VPN вручну у вашій системі.');
+            window.location.href = 'intent:#Intent;action=android.settings.VPN_SETTINGS;end';
         } else {
             // Відкрити налаштування VPN на Android через intent
             window.location.href = 'intent:#Intent;action=android.settings.VPN_SETTINGS;end';

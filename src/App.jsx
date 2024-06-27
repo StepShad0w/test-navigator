@@ -27,11 +27,11 @@ function App() {
           Змініть <code>src/App.jsx</code> і збережіть, щоб перевірити HMR
         </p>
       </div>
-      {navigator.userAgentData.platform}
+      {navigator.platform}
       <p className="read-the-docs">
         Натисніть на логотипи Vite та React, щоб дізнатися більше
       </p>
-      {/* <button onClick={openDeviceVPNSettings}>VPN</button> */}
+      <button onClick={openDeviceVPNSettings}>VPN</button>
     </>
   );
 }
