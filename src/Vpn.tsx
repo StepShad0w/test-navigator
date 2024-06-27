@@ -6,8 +6,8 @@ export const openDeviceVPNSettings = () => {
         window.location.href =
             'intent:#Intent;action=android.settings.VPN_SETTINGS;end';
     } else if (/iPad|iPhone|iPod/.test(ua) && !(window as any).MSStream) {
-        // Open iOS settings (unfortunately, no direct VPN settings URL scheme available)
-        window.location.href = 'app-settings:';
+        // Inform user about iOS limitation
+        alert('Please go to Settings > General > VPN on your iOS device to configure VPN settings.');
     } else if (/Windows Phone/i.test(ua)) {
         // Open Windows Phone settings
         window.location.href = 'ms-settings:network-vpn';

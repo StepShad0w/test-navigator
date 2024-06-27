@@ -4,7 +4,6 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { openDeviceVPNSettings } from './Vpn'
 
-
 function App() {
   const [count, setCount] = useState(0)
 
@@ -37,5 +36,4 @@ function App() {
 }
 
 export default App
-
 
