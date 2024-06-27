@@ -1,13 +1,16 @@
+import { isAndroid, isIOS } from 'react-device-detect';
 export const openDeviceVPNSettings = () => {
     const ua = navigator.userAgent;
     const isAndroid = /android/i.test(ua);
 
     if (isAndroid) {
-        if (/Linux armv81/i.test(ua)) {
-            alert('Будь ласка, відкрийте налаштування VPN вручну у вашій системі.');
-        } else {
-            // Відкрити налаштування VPN на Android через intent
+        if (isAndroid) {
+            // Перевірка на Android і відкриття налаштувань VPN через intent
             window.location.href = 'intent:#Intent;action=android.settings.VPN_SETTINGS;end';
+        } else if (isIOS) {
+            // Відкриття загальних налаштувань iOS
+            window.location.href = 'app-settings:';
+            alert('Будь ласка, перейдіть у Налаштування > Загальні > VPN, щоб налаштувати VPN.');
         }
     } else if (/iPad|iPhone|iPod/.test(ua) && !(window as any).MSStream) {
         // Відкрити загальні налаштування iOS (не існує прямої URL-схеми для VPN)
