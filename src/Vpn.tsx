@@ -2,10 +2,10 @@ export const openDeviceVPNSettings = () => {
     const ua = navigator.userAgent;
 
     if (/android/i.test(ua)) {
-        // Відкрити налаштування VPN на Android
-        if (/Linux/i.test(ua) && /armv81/i.test(ua)) {
+        if (/Linux armv81/i.test(ua)) {
             alert('Будь ласка, відкрийте налаштування VPN вручну у вашій системі.');
         } else {
+            // Відкрити налаштування VPN на Android через intent
             window.location.href = 'intent:#Intent;action=android.settings.VPN_SETTINGS;end';
         }
     } else if (/iPad|iPhone|iPod/.test(ua) && !(window as any).MSStream) {
@@ -22,7 +22,7 @@ export const openDeviceVPNSettings = () => {
         // Відкрити налаштування мережі на macOS, найближче до VPN
         window.location.href = 'x-apple.systempreferences:com.apple.preference.network';
     } else if (/Linux/i.test(ua) && /arm/i.test(ua)) {
-        // Відкрити налаштування VPN на Linux з ARM архітектурою
+        // Для Linux з ARM архітектурою надати інструкції
         alert('Будь ласка, відкрийте налаштування VPN вручну у вашій системі.');
     } else {
         alert('Налаштування не можуть бути відкриті на цьому пристрої.');
