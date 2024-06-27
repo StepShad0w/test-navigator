@@ -7,7 +7,7 @@ import { openDeviceVPNSettings } from './Vpn';
 
 function App() {
   const [count, setCount] = useState(0);
-console.log(navigator.userAgentData.platform);
+// console.log(navigator.userAgentData.platform);
   return (
     <>
       <div>
