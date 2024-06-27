@@ -1,7 +1,7 @@
 import { isAndroid, isIOS } from 'react-device-detect';
 export const openDeviceVPNSettings = () => {
     const ua = navigator.userAgent;
-    const isAndroid = /android/i.test(ua);
+    // const isAndroid = /android/i.test(ua);
 
     if (isAndroid) {
         if (isAndroid) {
